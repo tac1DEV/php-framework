@@ -83,6 +83,15 @@ class Request {
     
                 // Mettre à jour le fichier
                 if (file_put_contents($filePath, json_encode($data, JSON_PRETTY_PRINT))) {
+                    $newName = $path . (string)time() . $sub . ".json";
+
+                    if (rename($filePath, $newName)) {
+                        return new Response(
+                            'Données ajoutées et fichier renommé.',
+                            200,
+                            $this->getHeaders()
+                        );}
+
                     return new Response('Données ajoutées au fichier existant.',200,$this->getHeaders());
                 } else {
                     return new Response('Erreur lors de l\'ajout des données au fichier existant.',500,$this->getHeaders());
