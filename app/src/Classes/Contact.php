@@ -15,8 +15,8 @@ class Contact {
         return ["email", "subject", "message"];
     }
     
-    function getKeys(): array{
-        return ["email", "subject", "message"];
+    function getAltKeys(): array{
+        return ["email", "subject", "message", "dateOfCreation", "dateOfLastUpdate"];
     }
 
     function setEmail(string $email): self {

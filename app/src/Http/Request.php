@@ -34,12 +34,16 @@ class Request {
     public function checkValidity(): bool{
         //Je recupere les propriétés de mon contact
         $requiredKeys = $this->contact->getKeys();
+
+        $requiredAltKeys = $this->contact->getAltKeys();
         //Je recupere les propriétés de la requete
         $keysFromRequest = array_keys($this->body);
         if($requiredKeys === $keysFromRequest){
             return true;
+        }elseif($requiredAltKeys === $keysFromRequest){
+            return $response = new Response('Requete invalide. Doit retourner un email, un sujet et un message.',201,$request->getHeaders());
         }
-        return false;
+        return $response = new Response('Requete invalide. Doit retourner un email, un sujet et un message.',400,$request->getHeaders());
     }
 
     public function getBody(): array {
