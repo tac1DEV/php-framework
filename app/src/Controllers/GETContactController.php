@@ -9,7 +9,9 @@ class GETContactController extends AbstractController {
 
 
     public function process(Request $request): Response {    
-        // Check si valide
+        
+        $request->fetchAll();
+
         return new Response("GETController Up !");
     }
 }

@@ -69,4 +69,14 @@ class Request {
         }
         return $response = new Response('Requete invalide. Doit retourner un email, un sujet et un message.',400,$request->getHeaders());
     }
+
+    public function fetchAll(): string{
+        $path = __DIR__ . '/../../var/contact/';
+        $files = scandir($path);
+            foreach($files as $file) {
+                //do your work here
+                echo("hello");
+            }
+        // file_get_contents('php://input')
+    }
 }
