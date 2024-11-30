@@ -51,7 +51,6 @@ class Request {
 
         //Je recupere les propriétés de mon contact
         $requiredKeys = $this->contact->getKeys();
-        $requiredAltKeys = $this->contact->getAltKeys();
         
         //Je recupere les propriétés de la requete
         $keysFromRequest = array_keys($this->body);
@@ -78,5 +77,6 @@ class Request {
                 echo("hello");
             }
         // file_get_contents('php://input')
+        return "";
     }
 }
