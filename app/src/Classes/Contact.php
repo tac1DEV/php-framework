@@ -10,6 +10,10 @@ class Contact {
         $this->subject = $subject;
         $this->message = $message;
     }
+    
+    function getKeys(): array{
+        return ["email", "subject", "message"];
+    }
 
     function setEmail(string $email): self {
         $this->email = $email;
