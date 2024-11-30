@@ -34,10 +34,7 @@ class Request {
     public function checkValidity(): bool{
         //Je recupere les propriétés de mon contact
         $requiredKeys = $this->contact->getKeys();
-<<<<<<< HEAD
-=======
         //Je recupere les propriétés de la requete
->>>>>>> feat/Create-Contact
         $keysFromRequest = array_keys($this->body);
         if($requiredKeys === $keysFromRequest){
             return true;
