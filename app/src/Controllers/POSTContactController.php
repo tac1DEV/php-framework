@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Http\Request;
 use App\Http\Response;
 
-class ContactController extends AbstractController {
+class POSTContactController extends AbstractController {
 
 
     public function process(Request $request): Response {    
