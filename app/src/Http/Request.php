@@ -67,12 +67,6 @@ class Request {
             //return success
             return $response = new Response(file_get_contents('php://input'),200,$this->getHeaders());
         }
-        elseif($requiredAltKeys === $keysFromRequest){
-
-            return $response = new Response(XXXX,201,$request->getHeaders());
-        
-        }
-
         return $response = new Response('Requete invalide. Doit retourner un email, un sujet et un message.',400,$request->getHeaders());
     }
 }
