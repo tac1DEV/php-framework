@@ -15,7 +15,7 @@ class Request {
         $this->uri = $_SERVER['REQUEST_URI'];
         $this->method = $_SERVER['REQUEST_METHOD'];
         $this->headers = getallheaders();
-        $this->body = json_decode(file_get_contents('php://input'), true);
+        $this->body = json_decode(file_get_contents('php://input'), true) ?? [""];
         $this->contact = new Contact('zboui','zboui','zboui');
     }
 
