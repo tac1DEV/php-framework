@@ -9,6 +9,9 @@ class ContactController extends AbstractController {
 
 
     public function process(Request $request): Response {
+        if($request->checkValidity() === false){
+            return new Response('Requete invalide');
+        }
         return new Response('Contact Controller');
     }
 }
