@@ -18,7 +18,7 @@ class ContactController extends AbstractController {
         $response->setHeaders($request->getHeaders());
         
         if($request->getHeaders()["Content-Type"] !== "application/json"){
-            return new Response('Mauvais format.');
+            return new Response('Mauvais format. La requête doit etre au format JSON.');
         }
         if(!$request->checkValidity()){
             return new Response('La requête doit avoir les champs "email", "subject" et "message".', 400, $response->getHeaders());
