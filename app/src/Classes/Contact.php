@@ -9,6 +9,10 @@ class Contact {
         $this->email = $email;
         $this->subject = $subject;
         $this->message = $message;
+      }
+
+    function getKeys(): array{
+        return ["email", "subject", "message"];
     }
     
     function getKeys(): array{
