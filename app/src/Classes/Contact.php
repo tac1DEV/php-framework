@@ -41,7 +41,4 @@ class Contact {
     function getMessage(): string {
         return $this->message;
     }
-
-
-
 }
